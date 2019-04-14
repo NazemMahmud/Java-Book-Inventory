@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" 
+            minHeight="-Infinity" minWidth="-Infinity" 
+            prefHeight="500.0" prefWidth="600.0"  
+            fx:controller="bookinventory.GenreAllController">
+    <stylesheets>
+        <URL value="@genreAll.css"/>
+    </stylesheets>
+    <children>
+        <TextField fx:id="genreId"
+                layoutX="80.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="50.0" promptText="ID"  />
+        <TextField fx:id="genreName"
+                layoutX="150.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="130.0" promptText="Genre Name"  />
+        
+        <!-- Search Button -->
+        <Button fx:id="search" text="Search" layoutX="310.0" layoutY="30.0"
+            prefWidth="80" prefHeight="30" onAction="#searchAction">
+        </Button>
+        
+        <!-- Update Button -->
+        <Button fx:id="update" text="Update" layoutX="400.0" layoutY="30.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#updateAction">
+        </Button>
+        
+        <TableView fx:id="tableview" layoutX="80.0" layoutY="80.0" editable="true" 
+                   prefHeight="300.0" prefWidth="400.0" >
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="SL"  />
+                <TableColumn fx:id="col_name" prefWidth="325.0" text="Genre Name" styleClass="genName"  />                
+            </columns>
+        </TableView>
+        
+        <!-- Go Back Button -->
+        <Button fx:id="goBack" text="Back" 
+            layoutX="80.0" layoutY="400.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#goBackAction">
+        </Button>
+        
+        <!-- Update Button -->
+        <Button fx:id="delete" text="Delete" layoutX="180.0" layoutY="400.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#deleteAction">
+        </Button>
+        
+        <!-- Insert Button -->
+        <Button fx:id="insertGenre" text="Insert Genre" 
+            layoutX="380.0" layoutY="400.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#insertGenreAction">
+        </Button>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="30.0" right="10.0" top="10.0"     /> 
+    </padding>
+    
+</AnchorPane>

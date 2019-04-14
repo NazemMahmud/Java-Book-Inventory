@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0"
+            minHeight="-Infinity" minWidth="-Infinity" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="bookinventory.BooksAllController">
+    <stylesheets>
+        <URL value="@booksAll.css"/>
+    </stylesheets>
+    <children>
+        <TextField fx:id="bookId"
+                layoutX="80.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="50.0" promptText="ID"  />
+        <TextField fx:id="bookName"
+                layoutX="170.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="130.0" promptText="Book Name"  />
+        <TextField fx:id="writerName"
+                layoutX="340.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="130.0" promptText="Writer Name"  />
+        <ComboBox fx:id="genreName"
+                layoutX="510.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="130.0" promptText="Genre Name"  />
+        <TextField fx:id="price"
+                layoutX="680.0" layoutY="30.0"
+                prefHeight="30.0" prefWidth="100.0" promptText="Price"  />
+        
+         <!-- Search Button -->
+        <Button fx:id="search" text="Search" layoutX="80.0" layoutY="75.0"
+            prefWidth="80" prefHeight="30" onAction="#searchAction">
+        </Button>
+        
+        <!-- Update Button -->
+        <Button fx:id="update" text="Update" layoutX="200.0" layoutY="75.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#updateAction">
+        </Button>
+        
+        <!-- Delete Button -->
+        <Button fx:id="delete" text="Delete" layoutX="320.0" layoutY="75.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#deleteAction">
+        </Button>
+        
+        <!-- Go Back Button -->
+        <Button fx:id="goBack" text="Back" 
+            layoutX="580.0" layoutY="70.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#goBackAction">
+        </Button>
+        
+        <!-- Insert Button -->
+        <Button fx:id="insertBook" text="Insert Book" 
+            layoutX="680.0" layoutY="70.0"
+            prefWidth="100.0" prefHeight="30.0" 
+            onAction="#insertBookAction">
+        </Button>
+        
+        
+        <TableView fx:id="tableview" layoutX="80.0" layoutY="120.0" 
+                   prefHeight="300.0" prefWidth="700.0" >
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="35.0" text="SL"  />
+                <TableColumn fx:id="col_book_name" prefWidth="200.0" text="Book Name" styleClass="genName"  />
+                <TableColumn fx:id="col_writer_name" prefWidth="195.0" text="Writer Name"  />
+                <TableColumn fx:id="col_genre_name" prefWidth="195.0" text="Genre Name" styleClass="genName"  />
+                <TableColumn fx:id="col_price" prefWidth="75.0" text="Price"  />             
+            </columns>
+        </TableView>
+        
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="30.0" right="10.0" top="10.0"     /> 
+    </padding>
+    
+</AnchorPane>
+
+<!--<ScrollPane fx:id="scrollPane"  xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" 
+        prefHeight="400.0" prefWidth="1500.0" pannable="true"
+        fx:controller="bookinventory.BooksAllController" vbarPolicy="ALWAYS" 
+                   fitToHeight="true" fitToWidth="true" >
+    
+    <content>
+        <HBox fx:id="allBookHbox" alignment="TOP_CENTER" translateY="35" HBox.hgrow="ALWAYS" spacing="10">
+            <children>
+                 Go Back Button 
+                <Button fx:id="goBack" text="Back" 
+                    layoutX="100.0" layoutY="50.0"
+                    prefWidth="80" prefHeight="30" 
+                    onAction="#goBackAction">
+                </Button> 
+                <Label fx:id="nameLbl" layoutX="100.0" layoutY="150.0" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    prefHeight="20.0" prefWidth="200.0" text="Book Name" alignment="CENTER"  />
+
+                <Label fx:id="writerNameLbl"
+                    layoutX="400.0" layoutY="150.0" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    prefHeight="20.0" prefWidth="200.0" text="Writer Name" alignment="CENTER" />
+
+                <Label fx:id="genreLbl" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    layoutX="700.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Genre" alignment="CENTER" />
+
+                <Label fx:id="priceLbl" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30; "
+                    layoutX="1000.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Price" alignment="CENTER" />
+
+                <Label fx:id="actionLbl" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30; "
+                    layoutX="1300.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Action" alignment="CENTER" />
+                
+                <Label fx:id="dsffs" layoutX="100.0" layoutY="150.0" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    prefHeight="20.0" prefWidth="200.0" text="Book Name" alignment="CENTER"  />
+
+                <Label fx:id="dsf"
+                    layoutX="400.0" layoutY="150.0" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    prefHeight="20.0" prefWidth="200.0" text="Writer Name" alignment="CENTER" />
+
+                <Label fx:id="sfs" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30;"
+                    layoutX="700.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Genre" alignment="CENTER" />
+
+                <Label fx:id=" fsf ss" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30; "
+                    layoutX="1000.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Price" alignment="CENTER" />
+
+                <Label fx:id="fs fs" 
+                    style="-fx-font-size:15px; -fx-background-color: #C6C2C2; -fx-padding: 5 30 5 30; "
+                    layoutX="1300.0" layoutY="150.0"
+                    prefHeight="20.0" prefWidth="200.0" text="Action" alignment="CENTER" />
+            </children>
+        </HBox>   
+    </content>
+</ScrollPane>-->
+    

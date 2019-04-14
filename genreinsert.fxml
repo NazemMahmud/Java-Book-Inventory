@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"  
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookinventory.GenreInsertController">
+    <stylesheets>
+        <URL value="@genreInsert.css"/>
+    </stylesheets>
+    
+    <children> 
+        <Label fx:id="Lbl" cache="true" cacheHint="SCALE" 
+               layoutX="100.0" layoutY="20.0"
+               prefHeight="30.0" prefWidth="200.0" text="Insert a New Genre" style="-fx-font-size:15px;"   />
+        
+        <Label fx:id="nameLbl"
+               layoutX="100.0" layoutY="80.0" style="-fx-font-size:15px;"
+               prefHeight="20.0" prefWidth="100.0" text="Genre Name" textAlignment="LEFT" />
+        
+        <TextField fx:id="genreName"
+                layoutX="200.0" layoutY="75.0"
+                prefHeight="30.0" prefWidth="250.0" promptText="Enter Book Name"  />
+        
+        <!-- Go Back Button -->
+        <Button fx:id="goBack" text="Back" 
+            layoutX="100.0" layoutY="290.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#goBackAction">
+        </Button>
+        
+        <!-- Insert Button -->
+        <Button fx:id="insertGenre" text="Submit" 
+            layoutX="350.0" layoutY="290.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#insertGenreAction">
+        </Button>
+    </children>
+</AnchorPane>
+

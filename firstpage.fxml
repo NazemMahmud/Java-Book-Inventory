@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" 
+            prefHeight="400.0" prefWidth="500.0" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookinventory.MainController">
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    <children> 
+        <Label fx:id="inputLbl" cache="true" cacheHint="SCALE" 
+               layoutX="170.0" layoutY="30.0" style="-fx-font-size: 15px;" 
+               prefHeight="30.0" prefWidth="200.0" text="Please Select an Option" textAlignment="LEFT" />
+        
+        <!-- Insert Book Button -->
+        <Button fx:id="insertList" text="Insert Book" 
+            layoutX="100.0" layoutY="100.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#insertAction">
+        </Button>
+        
+        <!-- All Button -->
+        <Button fx:id="fullList" text="All Books"  
+            layoutX="270.0" layoutY="100.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#seeAllAction">
+        </Button>
+        
+        <!-- Insert Genre Button -->
+        <Button fx:id="insertGenre" text="Insert Genre" 
+            layoutX="100.0" layoutY="160.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#insertGenreAction">
+        </Button>
+        
+        <!-- All Genre -->
+        <Button fx:id="fullListGenre" text="All Genres"  
+            layoutX="270.0" layoutY="160.0"
+            prefWidth="100" prefHeight="30" 
+            onAction="#seeAllGenreAction">
+        </Button>
+        
+    </children>
+</AnchorPane>
+

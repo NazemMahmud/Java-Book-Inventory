@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookinventory.BookInsertController">
+
+        
+    <stylesheets>
+        <URL value="@bookinsert.css"/>
+    </stylesheets>
+    
+    <children> 
+        <Label fx:id="Lbl" cache="true" cacheHint="SCALE" 
+               layoutX="100.0" layoutY="20.0"
+               prefHeight="30.0" prefWidth="200.0" text="Insert a New Book" style="-fx-font-size:15px;"   />
+        
+        <Label fx:id="nameLbl"
+               layoutX="100.0" layoutY="80.0" style="-fx-font-size:15px;"
+               prefHeight="20.0" prefWidth="100.0" text="Book Name" textAlignment="LEFT" />
+        
+        <TextField fx:id="inputBookName"
+                layoutX="200.0" layoutY="70.0"
+                prefHeight="30.0" prefWidth="250.0" promptText="Enter Book Name"  />
+        
+        <Label fx:id="writerNameLbl"
+               layoutX="100.0" layoutY="130.0" style="-fx-font-size:15px;"
+               prefHeight="20.0" prefWidth="100.0" text="Writer Name" textAlignment="LEFT" />
+        
+        <TextField fx:id="inputWriterName"
+                layoutX="200.0" layoutY="120.0"
+                prefHeight="30.0" prefWidth="250.0" promptText="Enter Writer Name"  />
+        
+        <Label fx:id="genreLbl" style="-fx-font-size:15px;"
+               layoutX="100.0" layoutY="180.0"
+               prefHeight="20.0" prefWidth="100.0" text="Genre" textAlignment="LEFT" />
+        
+        <ComboBox fx:id="genre" 
+                  layoutX="200.0" layoutY="170.0" 
+                  prefHeight="30.0" prefWidth="250.0" promptText="Genre Name" />
+        
+        <Label fx:id="priceLbl" style="-fx-font-size:15px;"
+               layoutX="100.0" layoutY="230.0"
+               prefHeight="20.0" prefWidth="100.0" text="Price" textAlignment="LEFT" />
+        
+        <TextField fx:id="price"
+                layoutX="200.0" layoutY="220.0"
+                prefHeight="30.0" prefWidth="250.0" promptText="Enter Price"  />
+        
+        
+        <!-- Go Back Button -->
+        <Button fx:id="goBack" text="Back" 
+            layoutX="100.0" layoutY="290.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#goBackAction">
+        </Button>
+        
+        <!-- Insert Button -->
+        <Button fx:id="insertBook" text="Submit" 
+            layoutX="370.0" layoutY="290.0"
+            prefWidth="80" prefHeight="30" 
+            onAction="#insertBookAction">
+        </Button>
+    </children>
+</AnchorPane>
+
